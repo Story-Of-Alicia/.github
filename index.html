@@ -1,7 +1,7 @@
 <html lang="en-US">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <title>Open Alicia</title>
+  <title>Story Of Alicia</title>
   
   
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -11,78 +11,130 @@
   <script src="https://kit.fontawesome.com/0ead5b1f35.js" crossorigin="anonymous"></script>
 </head>
 <style>
-  body {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      height: 100%;
 
-      background-image: linear-gradient(to right top, #e65f5c, #b33e60, #792959, #3f1a44, #0f0326);
-      color: white;
-      background: #40434E;
+@font-face {
+  font-family: Eurostile;
+  src: url('eurostile.otf');
+}
 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+@font-face {
+  font-family: Quincho;
+  src: url('quincho.ttf');
+}
 
-      font-family: 'Roboto', sans-serif;
-      color: #ccc;
-  }
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
 
-  #title p {
-      font-family: 'Roboto', sans-serif;
-      font-size: 7rem;
-      font-weight: 700;
-      padding: 0;
-      margin: 0;
+  background-image: url('bg.png');
+  background-color: #DFE4EA;
+  background-size: 70%;
+  background-position-y: top;
+  background-position-x: right;
+  background-repeat: no-repeat;
 
-      text-align: center;
-  }
+  overflow: hidden;
 
-  #description p{
-      font-weight: 300;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  #content
-  {
-      display: flex;
-      flex-direction: column;
-  }
+#content {
+  display: flex;
+  width: 50%;
+  padding: 10%;
+}
 
-  #content div
-  {
-      display: flex;
-      justify-content: center;
-  }
+#header
+{
+  display: flex;
+  flex-direction: column;
+}
 
-  #socials a
-  {
-      color: white;
-  }
-  #socials i
-  {
-      font-size: 4rem;
-      padding: 1rem;
-  }
+#header p
+{
+  font-family: Eurostile;
+}
+
+#header div
+{
+  display: flex;
+  justify-content: center;
+}
+
+#title p {
+  color: #2C2B2B;
+  font-size: 7rem;
+  padding: 0;
+  margin: 0;
+
+  text-align: center;
+}
+
+#title .script
+{
+  font-size: 8.75rem;
+  font-family: Quincho;
+}
+
+#description p {
+  margin: 0;
+  color: #6D84BD;
+  max-width: 70%;
+  text-align: center;
+  font-size: 2rem;
+
+  text-transform: uppercase;
+}
+
+#socials {
+  padding: 2rem;
+}
+
+#socials a
+{
+  color: #B4C9DE;
+}
+
+#socials a:hover
+{
+  color: #6D84BD;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#socials i
+{
+  font-size: 4rem;
+  padding: 1rem;
+}
+
 </style>
 <body>
   <div id="content">
-    <div id="title">
-      <p>Open Alicia</p>
-    </div>
-    <div id="description">
-      <p>An open-source effort to maintain decade-old game Alicia</p>
-    </div>
-    <div id="socials">
-      <a href="https://www.youtube.com/@story_of_alicia" target="_blank">
-        <i class="fa-brands fa-youtube"></i>
-      </a>
-      <a href="https://github.com/Story-Of-Alicia" target="_blank">
-        <i class="fa-brands fa-github"></i>
-      </a>
-      <a href="https://wiki.storyofalicia.com" target="_blank">
-        <i class="fa-solid fa-book"></i>
-      </a>
+    <div id="header">
+      <div id="title">
+        <p>STORY OF <span class="script">Alicia</span></p>
+      </div>
+      <div id="description">
+        <p>Story of Alicia is a fan-made private server and preservation project for Ntreev Soft's Alicia.</p>
+      </div>
+      <div id="socials">
+        <a href="https://discord.gg/storyofalicia" target="_blank">
+          <i class="fa-brands fa-discord"></i>
+        </a>
+        <a href="https://www.youtube.com/@story_of_alicia" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://github.com/Story-Of-Alicia" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://wiki.storyofalicia.com" target="_blank">
+          <i class="fa-solid fa-book"></i>
+        </a>
+      </div>
     </div>
   </div>
 </body>
