@@ -1,20 +1,22 @@
 <script>
 
+let user = null;
+let token = null;
 let userName = null;
-let userToken = null;
 
 //! Retrieves and scrapes credentials from the URL parameters and stores them in the local storage.
 function scrapeCredentials()
 {
   const params = new URLSearchParams(document.location.search);
-  const hasCredentials = params.has("user") && params.has("token");
+  const hasCredentials = params.has("user") && params.has("token") && params.has("username");
 
   if (!hasCredentials)
       return;
 
-  userName = params.get("user");
-  userToken = params.get("token");
-
+  user = params.get("user");
+  token = params.get("token");
+  userName = params.get("username");
+  
   const url = new URL(document.location);
   url.search = "";
   window.history.replaceState({}, document.title, url.toString());
@@ -24,7 +26,7 @@ function scrapeCredentials()
 
 function handoffCredentials()
 {
-  const uri = `soa://launcher/?user=${encodeURIComponent(userName)}&token=${encodeURIComponent(userToken)}`;
+  const uri = `soa://launcher/?user=${encodeURIComponent(user)}&token=${encodeURIComponent(token)}&username=${encodeURIComponent(userName)}`;
   window.location.href = uri;
 }
 
