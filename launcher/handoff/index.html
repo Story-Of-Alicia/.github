@@ -26,6 +26,7 @@ function scrapeCredentials()
 
 function handoffCredentials()
 {
+  console.log("Redirecting to the launcher with the retrieved credentials...");
   const uri = `soa://launcher/?user=${encodeURIComponent(user)}&token=${encodeURIComponent(token)}&username=${encodeURIComponent(userName)}`;
   window.location.href = uri;
 }
@@ -34,7 +35,12 @@ function main()
 {
   scrapeCredentials();
   handoffCredentials();
-  window.close();
+
+  console.log("Your credentials are stored in `user` and `token` variables.");
+  console.log("You can launch the game manually by running the game client with the following command line arguments:");
+  console.log("\t./Alicia.exe -GameID 4 -ID [{user}] -OP [{token}]");
+  console.log("Replace `{user}` and `{token}` with the actual values of the `user` and `token` variables but keep the square brackets.");
+  console.log("You can read more about the game at https://wiki.storyofalicia.com/");
 }
 
 </script>
@@ -47,6 +53,6 @@ function main()
   <title>Launcher credentials handoff</title>
 </head>
 <body onload="main()">
-    Credentials handed off to the launcher, you can close this page.
+    Credentials handed off to the launcher, you can close this page. If you need to get your credentials manually then open the console. 
 </body>
 </html>
