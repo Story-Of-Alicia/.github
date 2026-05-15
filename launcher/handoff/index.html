@@ -1,0 +1,51 @@
+<script>
+
+//! Retrieves and scrapes credentials from the URL parameters and stores them in the local storage.
+function scrapeCredentials()
+{
+  const params = new URLSearchParams(document.location.search);
+  const hasCredentials = params.has("user") && params.has("token");
+
+  if (!hasCredentials)
+      return;
+
+  userName = params.get("user");
+  userToken = params.get("token");
+
+  const url = new URL(document.location);
+  url.search = "";
+  window.history.replaceState({}, document.title, url.toString());
+
+  console.log("Credentials retrieved and scrapped from the URL.");
+}
+
+function handoffCredentials()
+{
+  const params = new URLSearchParams(document.location.search);
+  userName = params.get("user");
+  userToken = params.get("token");
+  
+  const uri = `soa://launcher/?user=${encodeURIComponent(userName)}&token=${encodeURIComponent(userToken)}`;
+  window.location.href = uri;
+}
+
+function main()
+{
+  scrapeCredentials();
+  handoffCredentials();
+  window.close();
+}
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launcher credentials handoff</title>
+</head>
+<body onload="main()">
+    Credentials handed off to the launcher, you can close this page.
+</body>
+</html>
