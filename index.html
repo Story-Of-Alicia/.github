@@ -12,12 +12,12 @@
 
 @font-face {
   font-family: Eurostile;
-  src: url('assets/eurostile.otf');
+  src: url('assets/fonts/eurostile.otf');
 }
 
 @font-face {
   font-family: Quincho;
-  src: url('assets/quincho.ttf');
+  src: url('assets/fonts/quincho.ttf');
 }
 
 html, body {
@@ -31,7 +31,7 @@ body {
   min-height: 100vh;
   box-sizing: border-box;
 
-  background-image: url('assets/bg.png');
+  background-image: url('assets/bitmaps/bg.png');
   background-color: #DFE4EA;
   background-size: auto 100vh;
   background-position-x: right;
@@ -114,17 +114,33 @@ body {
 
 #actions {
   width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+#actions .button
+{
+  margin: 1rem;
+
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#actions img
+{
+  width: clamp(2rem, 4vw, 3rem);
+  color: #B4C9DE;
+  padding: 0.5rem;
 }
 
 .button {
-  display: inline-block;
+  display: block;
   background: #B4C9DE;
   color: #6D84BD;
   border-radius: 5px;
   font-family: Eurostile;
-  font-size: 24px;
+  font-size: 1.3rem;
   text-transform: uppercase;
   font-weight: bold;
   border: none;
@@ -156,23 +172,30 @@ body {
       </div>
       <div id="socials">
         <a href="https://discord.gg/storyofalicia" target="_blank">
-          <img src="assets/discord-brands-solid-full.svg" alt="">
+          <img src="assets/svgs/discord-brands-solid-full.svg" alt="">
         </a>
         <a href="https://vk.com/story_of_alicia" target="_blank">
-          <img src="assets/vk-brands-solid-full.svg" alt="">
+          <img src="assets/svgs/vk-brands-solid-full.svg" alt="">
         </a>
         <a href="https://github.com/Story-Of-Alicia" target="_blank">
-          <img src="assets/github-brands-solid-full.svg" alt="">
+          <img src="assets/svgs/github-brands-solid-full.svg" alt="">
         </a>
         <a href="https://wiki.storyofalicia.com" target="_blank">
-          <img src="assets/book-solid-full.svg" alt="">
+          <img src="assets/svgs/book-solid-full.svg" alt="">
         </a>
       </div>
       <div id="description">
         <p style="margin-bottom: 1.5rem;">Participate in the public play test</p>
       </div>
       <div id="actions">
-          <a class="button" href="https://r2.storyofalicia.com/launcher/Story%20of%20Alicia%20Launcher_1.1.1_x64-setup.exe">Download the launcher</a>
+          <a class="button" href="https://r2.storyofalicia.com/launcher/Story%20of%20Alicia%20Launcher_1.1.1_x64-setup.exe">
+            <img src="assets/svgs/windows-brands-solid-full.svg" alt="">
+            <p>Download the launcher for Windows</p>
+          </a>
+          <a class="button" href="https://r2.storyofalicia.com/launcher/linux/Story_Of_Alicia_Launcher_1.0.0_x86_64.AppImage">
+            <img src="assets/svgs/linux-brands-solid-full.svg" alt="">
+            <p>Download the launcher for Linux</p>
+          </a>
       </div>
     </div>
   </div>
