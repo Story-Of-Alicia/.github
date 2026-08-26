@@ -1,150 +1,236 @@
 <html lang="en-US">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <title>Story of Alicia</title>
-  
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <style>
+  @font-face {
+    font-family: Eurostile;
+    src: url('assets/fonts/eurostile.otf');
+  }
 
-@font-face {
-  font-family: Eurostile;
-  src: url('assets/eurostile.otf');
-}
+  @font-face {
+    font-family: Quincho;
+    src: url('assets/fonts/quincho.ttf');
+  }
 
-@font-face {
-  font-family: Quincho;
-  src: url('assets/quincho.ttf');
-}
+  html,
+  body {
+    height: 100%;
+  }
 
-html, body {
-  height: 100%;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  min-height: 100vh;
-  box-sizing: border-box;
-
-  background-image: url('assets/bg.png');
-  background-color: #DFE4EA;
-  background-size: auto 100vh;
-  background-position-x: right;
-  background-position-y: top;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: safe center;
-}
-
-
-#content {
-  display: flex;
-  width: 50%;
-  padding: 2rem 5rem;
-  box-sizing: border-box;
-}
-
-#header
-{
-  display: flex;
-  flex-direction: column;
-}
-
-#header p
-{
-  font-family: Eurostile;
-}
-
-#header div
-{
-  display: flex;
-  justify-content: center;
-}
-
-#title p {
-  color: #2C2B2B;
-  font-size: clamp(2.5rem, 8vw, 7rem);
-  line-height: 1;
-  padding: 0;
-  margin: 0;
-
-  text-align: center;
-}
-
-#title .script
-{
-  font-size: clamp(3rem, 10vw, 8.75rem);
-  font-family: Quincho;
-}
-
-#description p {
-  margin: 0;
-  color: #6D84BD;
-  max-width: 70%;
-  text-align: center;
-  font-size: clamp(1rem, 2vw, 2rem);
-
-  text-transform: uppercase;
-}
-
-#socials {
-  padding: clamp(0.5rem, 2vw, 2rem);
-}
-
-#socials img
-{
-  width: clamp(2rem, 4vw, 4rem);
-  color: #B4C9DE;
-  padding: 0.5rem;
-}
-
-#socials img:hover
-{
-  color: #6D84BD;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#actions {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.button {
-  display: inline-block;
-  background: #B4C9DE;
-  color: #6D84BD;
-  border-radius: 5px;
-  font-family: Eurostile;
-  font-size: 24px;
-  text-transform: uppercase;
-  font-weight: bold;
-  border: none;
-  padding: 0.75rem 4rem;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-}
-
-@media (max-width: 850px) {
-  #content {
-    width: 100%;
+  body {
     padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    background-image: url('assets/bitmaps/bg.png');
+    background-color: #DFE4EA;
+    background-size: auto 100vh;
+    background-position-x: right;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
   }
-  body{
-    background-position: center;
+
+
+  #content {
+    display: flex;
+    width: 50%;
+    padding: 2rem 5rem;
+    box-sizing: border-box;
   }
+
+  #header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #header p {
+    font-family: Eurostile;
+  }
+
+  #header>div {
+    display: flex;
+    justify-content: center;
+  }
+
+  #title p {
+    color: #2C2B2B;
+    font-size: clamp(2.5rem, 8vw, 7rem);
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+
+    text-align: center;
+  }
+
+  #title .script {
+    font-size: clamp(3rem, 10vw, 8.75rem);
+    font-family: Quincho;
+  }
+
+  #description p {
+    margin: 0;
+    color: #6D84BD;
+    max-width: 70%;
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 2rem);
+
+    text-transform: uppercase;
+  }
+
+  #socials {
+    padding: clamp(0.5rem, 2vw, 2rem);
+  }
+
+  #socials img {
+    width: clamp(2rem, 4vw, 4rem);
+    color: #B4C9DE;
+    padding: 0.5rem;
+  }
+
+  #socials img:hover {
+    color: #6D84BD;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  #actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #actions .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #actions img {
+    color: #B4C9DE;
+  }
+
+  .button {
+    display: block;
+    background: #B4C9DE;
+    color: #6D84BD;
+    border-radius: 5px;
+    font-family: Eurostile;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    padding: 0.75rem 4rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-toggle {
+    width: 460px;
+    box-sizing: border-box;
+    margin: 0 !important;
+    position: relative;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    padding: 1rem 4.5rem;
+  }
+
+  .dropdown-toggle::after {
+    content: ">";
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+  }
+
+  .dropdown:has(.dropdown-menu.show) .dropdown-toggle::after {
+    content: ">";
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  .dropdown:has(.dropdown-menu.show) .dropdown-toggle {
+  border-radius: 5px 5px 0 0;
 }
 
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    width: 460px;
+    display: none;
+    background: #C9D6E4;
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 1rem;
+    color: #6D84BD;
+    font-family: Eurostile;
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .dropdown-menu a img {
+    width: 1.8rem;
+    height: 1.8rem;
+    padding: 0;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .dropdown-menu a:hover {
+    background: #6D84BD;
+    color: #B4C9DE;
+  }
+
+  @media (max-width: 850px) {
+    #content {
+      width: 100%;
+      padding: 0;
+    }
+
+    body {
+      background-position: center;
+    }
+  }
 </style>
+
 <body>
   <div id="content">
     <div id="header">
@@ -156,25 +242,64 @@ body {
       </div>
       <div id="socials">
         <a href="https://discord.gg/storyofalicia" target="_blank">
-          <img src="assets/discord-brands-solid-full.svg" alt="">
+          <img src="assets/svgs/discord-brands-solid-full.svg" alt="">
         </a>
         <a href="https://vk.com/story_of_alicia" target="_blank">
-          <img src="assets/vk-brands-solid-full.svg" alt="">
+          <img src="assets/svgs/vk-brands-solid-full.svg" alt="">
         </a>
         <a href="https://github.com/Story-Of-Alicia" target="_blank">
-          <img src="assets/github-brands-solid-full.svg" alt="">
+          <img src="assets/svgs/github-brands-solid-full.svg" alt="">
         </a>
         <a href="https://wiki.storyofalicia.com" target="_blank">
-          <img src="assets/book-solid-full.svg" alt="">
+          <img src="assets/svgs/book-solid-full.svg" alt="">
         </a>
       </div>
       <div id="description">
         <p style="margin-bottom: 1.5rem;">Participate in the public play test</p>
       </div>
       <div id="actions">
-          <a class="button" href="https://r2.storyofalicia.com/launcher/Story%20of%20Alicia%20Launcher_1.1.1_x64-setup.exe">Download the launcher</a>
+        <div class="dropdown">
+          <button class="button dropdown-toggle" type="button" id="downloadBtn">
+            Download
+          </button>
+          <div class="dropdown-menu" id="downloadMenu">
+            <a href="https://r2.storyofalicia.com/launcher/Story%20of%20Alicia%20Launcher_1.1.1_x64-setup.exe">
+              <img src="assets/svgs/windows-brands-solid-full.svg" alt="">
+              <span>Download the launcher for Windows</span>
+            </a>
+
+            <a href="https://r2.storyofalicia.com/launcher/linux/Story_Of_Alicia_Launcher_1.0.0_x86_64.AppImage">
+              <img src="assets/svgs/linux-brands-solid-full.svg" alt="">
+              <span>Download the launcher for Linux</span>
+            </a>
+
+            <a href="https://r2.storyofalicia.com/launcher/macos/Story_Of_Alicia-1.0.0-macos.dmg">
+              <img src="assets/svgs/mac-brands-solid-full.svg" alt="" >
+              <span>Download the launcher for MacOS</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    const downloadButton = document.getElementById('downloadBtn');
+    const downloadMenu = document.getElementById('downloadMenu');
+
+    downloadButton.addEventListener('click', function (event) {
+      event.stopPropagation();
+      downloadMenu.classList.toggle('show');
+    });
+
+    downloadMenu.addEventListener('click', function (event) {
+      event.stopPropagation();
+    });
+
+    document.addEventListener('click', function () {
+      downloadMenu.classList.remove('show');
+    });
+  </script>
+
 </body>
 </html>
